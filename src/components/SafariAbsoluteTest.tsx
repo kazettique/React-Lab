@@ -14,7 +14,7 @@ export default function SafariAbsoluteTest() {
     </div>
   );
 
-  const trList = Array(50)
+  const trList = Array(10)
     .fill('')
     .map(() => renderTR);
 
@@ -54,9 +54,20 @@ export default function SafariAbsoluteTest() {
           <div className={tdClass}>4</div>
           <div className={tdClass}>5</div>
           <div className={tdClass}>6</div>
-          {renderRowMask}
+          <div>{renderRowMask}</div>
         </div>
+
         <div className="table-row-group">{trList}</div>
+
+        <div className="relative table-row">
+          <div className={tdClass}>1</div>
+          <div className={tdClass}>2</div>
+          <div className={tdClass}>3</div>
+          <div className={tdClass}>4</div>
+          <div className={tdClass}>5</div>
+          <div className={tdClass}>6</div>
+          <div>{renderRowMask}</div>
+        </div>
       </div>
     </div>
   );
