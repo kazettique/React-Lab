@@ -1,3 +1,4 @@
+import SafariAbsoluteTest from './components/SafariAbsoluteTest';
 import { useMobileViewPortHeight } from './hooks';
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen" style={mobileViewPortHeight.style}>
-      hello react lab
+      <SafariAbsoluteTest />
     </div>
   );
 }
