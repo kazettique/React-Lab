@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-lab/static/css/main.61b86c59.css",
-    "main.js": "/react-lab/static/js/main.d8883771.js",
+    "main.css": "/react-lab/static/css/main.0e3e1ea4.css",
+    "main.js": "/react-lab/static/js/main.cd93d010.js",
     "static/js/787.4a815658.chunk.js": "/react-lab/static/js/787.4a815658.chunk.js",
     "index.html": "/react-lab/index.html",
-    "main.61b86c59.css.map": "/react-lab/static/css/main.61b86c59.css.map",
-    "main.d8883771.js.map": "/react-lab/static/js/main.d8883771.js.map",
+    "main.0e3e1ea4.css.map": "/react-lab/static/css/main.0e3e1ea4.css.map",
+    "main.cd93d010.js.map": "/react-lab/static/js/main.cd93d010.js.map",
     "787.4a815658.chunk.js.map": "/react-lab/static/js/787.4a815658.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61b86c59.css",
-    "static/js/main.d8883771.js"
+    "static/css/main.0e3e1ea4.css",
+    "static/js/main.cd93d010.js"
   ]
 }
