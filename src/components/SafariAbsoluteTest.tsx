@@ -34,7 +34,7 @@ export default function SafariAbsoluteTest() {
   );
 
   const renderRowMask = (
-    <div className="table-cell absolute top-0 left-0 w-full h-full z-10">
+    <div className="absolute top-0 left-0 w-full h-full z-10">
       <div className="bg-red-600 opacity-50 flex items-center justify-center w-full h-full">
         <div className="p-4 rounded-lg flex">
           <div>Deleted</div>
@@ -54,7 +54,7 @@ export default function SafariAbsoluteTest() {
           <div className={tdClass}>4</div>
           <div className={tdClass}>5</div>
           <div className={tdClass}>6</div>
-          <div>{renderRowMask}</div>
+          <div style={{ display: 'inherit' }}>{renderRowMask}</div>
         </div>
 
         <div className="table-row-group">{trList}</div>
@@ -66,7 +66,7 @@ export default function SafariAbsoluteTest() {
           <div className={tdClass}>4</div>
           <div className={tdClass}>5</div>
           <div className={tdClass}>6</div>
-          <div>{renderRowMask}</div>
+          <div style={{ display: 'inherit' }}>{renderRowMask}</div>
         </div>
       </div>
     </div>
