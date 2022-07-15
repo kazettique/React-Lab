@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 function CollapseItem(props: { isEdit: boolean }) {
   const [isCollapse, setIsCollapse] = useState<boolean>(false);
@@ -24,51 +24,84 @@ function CollapseItem(props: { isEdit: boolean }) {
   );
 }
 
+function Render8({ _isEdit }: { _isEdit: boolean }) {
+  return (
+    <div className="border-2 border-blue-500 w-1/5">
+      <div className="font-bold">render8</div>
+      <div className="font-bold">(JSX with props, outside component)</div>
+      <CollapseItem isEdit={_isEdit} />
+      <CollapseItem isEdit={_isEdit} />
+    </div>
+  );
+}
+
 export default function IndependentCollapse() {
   const [isEdit, setIsEdit] = useState<boolean>(false);
 
   const render1 = (
-    <div className="border border-blue-500 w-1/5">
-      <div>render1</div>
-      <div>(const, computed, useMemo)</div>
+    <div className="border-2 border-blue-500 w-1/5">
+      <div className="font-bold">render1</div>
+      <div className="font-bold">(const, computed, useMemo)</div>
       <CollapseItem isEdit={isEdit} />
       <CollapseItem isEdit={isEdit} />
-      {/* <CollapseItem isEdit={isEdit} /> */}
     </div>
   );
 
   const Render2 = () => (
-    <div className="border border-red-500 w-1/5">
-      <div>render2</div>
-      <div>(JSX without props)</div>
+    <div className="border-2 border-red-500 w-1/5">
+      <div className="font-bold">render2</div>
+      <div className="font-bold">(JSX without props)</div>
       <CollapseItem isEdit={isEdit} />
       <CollapseItem isEdit={isEdit} />
-      {/* <CollapseItem isEdit={isEdit} /> */}
     </div>
   );
 
-  const Render3 = ({ _isEdit }: { _isEdit: boolean }) => (
-    <div className="border border-red-500 w-1/5">
-      <div>render3</div>
-      <div>(JSX with props)</div>
+  const Render3 = useCallback(
+    () => (
+      <div className="border-2 border-red-500 w-1/5">
+        <div className="font-bold">render3</div>
+        <div className="font-bold">(JSX without props, with useCallback)</div>
+        <CollapseItem isEdit={isEdit} />
+        <CollapseItem isEdit={isEdit} />
+      </div>
+    ),
+    [isEdit]
+  );
+
+  const Render4 = ({ _isEdit }: { _isEdit: boolean }) => (
+    <div className="border-2 border-red-500 w-1/5">
+      <div className="font-bold">render4</div>
+      <div className="font-bold">(JSX with props)</div>
       <CollapseItem isEdit={_isEdit} />
       <CollapseItem isEdit={_isEdit} />
     </div>
   );
 
-  const render4 = () => (
-    <div className="border border-blue-500 w-1/5">
-      <div>render4</div>
-      <div>(callback function without params)</div>
+  const Render5 = useCallback(
+    ({ _isEdit }: { _isEdit: boolean }) => (
+      <div className="border-2 border-blue-500 w-1/5">
+        <div className="font-bold">render5</div>
+        <div className="font-bold">(JSX with props, with useCallback)</div>
+        <CollapseItem isEdit={_isEdit} />
+        <CollapseItem isEdit={_isEdit} />
+      </div>
+    ),
+    []
+  );
+
+  const render6 = () => (
+    <div className="border-2 border-blue-500 w-1/5">
+      <div className="font-bold">render6</div>
+      <div className="font-bold">(callback function without params)</div>
       <CollapseItem isEdit={isEdit} />
       <CollapseItem isEdit={isEdit} />
     </div>
   );
 
-  const render5 = (_isEdit: boolean) => (
-    <div className="border border-blue-500 w-1/5">
-      <div>render5</div>
-      <div>(callback function with params)</div>
+  const render7 = (_isEdit: boolean) => (
+    <div className="border-2 border-blue-500 w-1/5">
+      <div className="font-bold">render7</div>
+      <div className="font-bold">(callback function with params)</div>
       <CollapseItem isEdit={_isEdit} />
       <CollapseItem isEdit={_isEdit} />
     </div>
@@ -92,12 +125,15 @@ export default function IndependentCollapse() {
           </button>
         )}
       </div>
-      <div className="p-3 flex gap-x-2">
+      <div className="p-3 flex gap-2 flex-wrap">
         {render1}
         <Render2 />
-        <Render3 _isEdit={isEdit} />
-        {render4()}
-        {render5(isEdit)}
+        <Render3 />
+        <Render4 _isEdit={isEdit} />
+        <Render5 _isEdit={isEdit} />
+        {render6()}
+        {render7(isEdit)}
+        <Render8 _isEdit={isEdit} />
       </div>
     </div>
   );
