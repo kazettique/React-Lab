@@ -1,3 +1,4 @@
+import CustomCheckbox from './components/CustomCheckbox';
 import IndependentCollapse from './components/IndependentCollapse';
 import SafariAbsoluteTest from './components/SafariAbsoluteTest';
 import { useMobileViewPortHeight } from './hooks';
@@ -9,6 +10,7 @@ function App() {
     <div className="h-screen w-screen" style={mobileViewPortHeight.style}>
       <SafariAbsoluteTest />
       {/* <IndependentCollapse /> */}
+      <CustomCheckbox />
     </div>
   );
 }
