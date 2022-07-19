@@ -7,8 +7,8 @@ function App() {
   const mobileViewPortHeight = useMobileViewPortHeight();
 
   return (
-    <div className="h-screen w-screen" style={mobileViewPortHeight.style}>
-      <SafariAbsoluteTest />
+    <div className="h-screen w-screen bg-neutral-400" style={mobileViewPortHeight.style}>
+      {/* <SafariAbsoluteTest /> */}
       {/* <IndependentCollapse /> */}
       <CustomCheckbox />
     </div>
