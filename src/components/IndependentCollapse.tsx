@@ -108,7 +108,7 @@ export default function IndependentCollapse() {
   );
 
   return (
-    <div className="w-full h-full">
+    <div data-comp="IndependentCollapse" className="w-full h-full">
       <div className="flex">
         {isEdit ? (
           <>

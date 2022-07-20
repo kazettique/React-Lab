@@ -44,7 +44,7 @@ export default function SafariAbsoluteTest() {
   );
 
   return (
-    <div className="max-h-[50vh] w-full overflow-auto">
+    <div data-comp="SafariAbsoluteTest" className="max-h-[50vh] w-full overflow-auto">
       <div className="table w-full border-collapse border border-neutral-200">
         {renderTH}
         <div className="relative table-row">

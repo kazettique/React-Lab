@@ -14,7 +14,7 @@ export default function CustomCheckbox(props: IProps): ReactElement {
   const uuid = useId();
 
   return (
-    <div data-custom-checkbox className={`flex justify-center items-center ${className}`}>
+    <div data-comp="CustomCheckbox" className={`flex justify-center items-center ${className}`}>
       <div className="flex items-center mr-4 mb-2 relative">
         <input
           disabled={disabled}
