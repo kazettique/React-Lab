@@ -14,7 +14,14 @@ function useMobileViewPortHeight() {
   useEffect(() => {
     const portrait = window.matchMedia('(orientation:portrait)');
     updateHeight();
-    portrait.addEventListener('change', updateHeight);
+
+    if (portrait && portrait?.addEventListener) {
+      portrait.addEventListener('change', updateHeight);
+    }
+
+    if (portrait && portrait?.addListener) {
+      portrait.addListener(updateHeight);
+    }
   }, []);
 
   useEffect(() => {
