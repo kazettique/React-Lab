@@ -1,15 +1,18 @@
-import CustomCheckbox, { IProps } from './components/CustomCheckbox';
-import IndependentCollapse from './components/IndependentCollapse';
-import SafariAbsoluteTest from './components/SafariAbsoluteTest';
+import { useRoutes } from 'react-router-dom';
+import Menu from './components/Menu';
 import { useMobileViewPortHeight } from './hooks';
-import CustomCheckboxPage from './pages/CustomCheckboxPage';
+import { routes } from './router';
 
 function App() {
   const mobileViewPortHeight = useMobileViewPortHeight();
+  const router = useRoutes(routes);
 
   return (
-    <div className="h-screen w-screen bg-neutral-400" style={mobileViewPortHeight.style}>
-      <CustomCheckboxPage />
+    <div className="h-screen w-screen" style={mobileViewPortHeight.style}>
+      <div data-router-container className="relative w-full h-full">
+        {router}
+        <Menu />
+      </div>
     </div>
   );
 }
