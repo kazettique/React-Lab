@@ -1,5 +1,6 @@
 import CustomCheckboxPage from '@/pages/CustomCheckboxPage';
 import Gallery from '@/pages/Gallery';
+import Test from '@/pages/Test';
 import { BASE_URL } from './common';
 
 type RouterMapping = {
@@ -18,5 +19,10 @@ export const routerMapping: RouterMapping[] = [
     path: `/${BASE_URL}/customCheckBox`,
     element: CustomCheckboxPage,
     label: 'Custom Checkbox',
+  },
+  {
+    path: `/${BASE_URL}/test`,
+    element: Test,
+    label: 'Test',
   },
 ];
