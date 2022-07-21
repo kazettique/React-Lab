@@ -14,14 +14,17 @@ function Menu(props: IProps): ReactElement {
   const menuContentStyle = isOpen ? 'block' : 'hidden';
 
   return (
-    <div data-comp="Menu" className={`absolute top-8 right-8 text-right ${className}`}>
-      <div className="flex justify-end">
+    <div data-comp="Menu" className={`absolute top-8 right-8 ${className}`}>
+      <button
+        className="flex justify-end bg-neutral-200 rounded-md shadow-md ml-auto mr-0"
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
         {isOpen ? (
-          <XIcon className="h-7 w-7 cursor-pointer text-neutral-700" onClick={() => setIsOpen(false)} />
+          <XIcon className="h-7 w-7 m-3 text-neutral-700" />
         ) : (
-          <MenuIcon className="h-7 w-7 cursor-pointer text-neutral-700" onClick={() => setIsOpen(true)} />
+          <MenuIcon className="h-7 w-7 m-3 text-neutral-700" />
         )}
-      </div>
+      </button>
       <div className={`bg-white shadow-md mt-3 rounded overflow-hidden ${menuContentStyle}`}>
         {routerMapping.map((menuItem) => (
           <NavLink

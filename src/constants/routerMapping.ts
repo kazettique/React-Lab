@@ -10,12 +10,12 @@ type RouterMapping = {
 
 export const routerMapping: RouterMapping[] = [
   {
-    path: `${BASE_URL}/`,
+    path: `/${BASE_URL}/`,
     element: Gallery,
     label: 'Gallery',
   },
   {
-    path: `${BASE_URL}/customCheckBox`,
+    path: `/${BASE_URL}/customCheckBox`,
     element: CustomCheckboxPage,
     label: 'Custom Checkbox',
   },
