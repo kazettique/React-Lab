@@ -51,7 +51,7 @@ function NumPad(props: IProps) {
   };
 
   return (
-    <div data-comp="NumPad" className={`w-full grid grid-cols-3 gap-1 ${className}`}>
+    <div data-comp="NumPad" className={`w-full grid grid-cols-3 gap-5 ${className}`}>
       {numObjects.map((item, idx) => (
         <button
           key={idx}
