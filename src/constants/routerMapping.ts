@@ -1,4 +1,5 @@
 import CustomCheckboxPage from '@/pages/CustomCheckboxPage';
+import FramerMotionTest from '@/pages/FramerMotionTest';
 import Gallery from '@/pages/Gallery';
 import Test from '@/pages/Test';
 import { BASE_URL } from './common';
@@ -24,5 +25,10 @@ export const routerMapping: RouterMapping[] = [
     path: `/${BASE_URL}/test`,
     element: Test,
     label: 'Test',
+  },
+  {
+    path: `/${BASE_URL}/framerMotionTest`,
+    element: FramerMotionTest,
+    label: 'Framer Motion Test',
   },
 ];
