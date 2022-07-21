@@ -21,6 +21,7 @@ export default function CustomCheckbox(props: IProps): ReactElement {
           type="checkbox"
           id={`checkbox-${uuid}`}
           name={`checkbox-${uuid}`}
+          checked={checked}
           className="opacity-0 absolute h-5 w-5"
           onChange={(event) => onChange(event.target.checked)}
           onClick={(event) => event.stopPropagation()}
