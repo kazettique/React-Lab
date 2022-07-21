@@ -1,18 +1,14 @@
 import { RouteObject } from 'react-router-dom';
+import { routerMapping } from './constants/routerMapping';
 import PageNotFound from './pages/PageNotFound';
-import CustomCheckboxPage from './pages/CustomCheckboxPage';
-import Gallery from './pages/Gallery';
-
-const baseUrl = 'react-lab';
 
 export const routes: RouteObject[] = [
-  {
-    path: `${baseUrl}/`,
-    element: <Gallery />,
-  },
-  {
-    path: `${baseUrl}/customCheckBox`,
-    element: <CustomCheckboxPage />,
-  },
+  ...routerMapping.map((routerItem) => {
+    const { path, element: Element } = routerItem;
+    return {
+      path: path,
+      element: <Element />,
+    };
+  }),
   { path: '*', element: <PageNotFound /> },
 ];
