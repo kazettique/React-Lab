@@ -14,7 +14,7 @@ function Menu(props: IProps): ReactElement {
   const menuContentStyle = isOpen ? 'block' : 'hidden';
 
   return (
-    <div data-comp="Menu" className={`absolute top-8 right-8 ${className}`}>
+    <div data-comp="Menu" className={`absolute top-0 right-0 ${className}`}>
       <button
         className="flex justify-end bg-neutral-200 rounded-md shadow-md ml-auto mr-0"
         onClick={() => setIsOpen((prev) => !prev)}
