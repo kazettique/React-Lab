@@ -4,6 +4,11 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { ResizeObserver } from '@juggle/resize-observer';
+
+if (!window.ResizeObserver) {
+  window.ResizeObserver = ResizeObserver;
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
