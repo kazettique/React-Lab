@@ -23,7 +23,7 @@ interface IProps {
 }
 
 // ref: https://codesandbox.io/s/quizzical-water-b3dedw?file=/src/Popover.tsx:1416-1423
-function Popover(props: IProps): ReactElement {
+function PopoverPortal(props: IProps): ReactElement {
   const { children, render, placement, className = '' } = props;
   const [open, setOpen] = useState(false);
 
@@ -49,22 +49,24 @@ function Popover(props: IProps): ReactElement {
     <>
       {cloneElement(children, getReferenceProps({ ref: reference, ...children.props }))}
       {open && (
-        <FloatingFocusManager context={context} modal={false} order={['reference', 'content']} returnFocus={false}>
-          <div
-            {...getFloatingProps({
-              className,
-              ref: floating,
-              style: { position: strategy, top: y ?? 70, left: x ?? 0 },
-              'aria-labelledby': labelId,
-              'aria-describedby': descriptionId,
-            })}
-          >
-            {render({ labelId, descriptionId, close: () => setOpen(false) })}
-          </div>
-        </FloatingFocusManager>
+        <FloatingPortal>
+          <FloatingFocusManager context={context} modal={false} order={['reference', 'content']} returnFocus={false}>
+            <div
+              {...getFloatingProps({
+                className,
+                ref: floating,
+                style: { position: strategy, top: y ?? 70, left: x ?? 0 },
+                'aria-labelledby': labelId,
+                'aria-describedby': descriptionId,
+              })}
+            >
+              {render({ labelId, descriptionId, close: () => setOpen(false) })}
+            </div>
+          </FloatingFocusManager>
+        </FloatingPortal>
       )}
     </>
   );
 }
 
-export default Popover;
+export default PopoverPortal;
