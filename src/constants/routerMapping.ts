@@ -6,6 +6,7 @@ import FramerMotionTest from '@/pages/FramerMotionTest';
 import Gallery from '@/pages/Gallery';
 import MobileTouchAreaTest from '@/pages/MobileTouchAreaTest';
 import Test from '@/pages/Test';
+import UseIsMobileTest from '@/pages/UseIsMobileTest';
 import { BASE_URL } from './common';
 
 type RouterMapping = {
@@ -54,5 +55,10 @@ export const routerMapping: RouterMapping[] = [
     path: `/${BASE_URL}/floatingUITest`,
     element: FloatingUITest,
     label: 'Floating UI Test',
+  },
+  {
+    path: `/${BASE_URL}/useIsMobileTest`,
+    element: UseIsMobileTest,
+    label: 'useIsMobile Test',
   },
 ];
