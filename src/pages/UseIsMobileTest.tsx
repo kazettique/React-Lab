@@ -6,7 +6,11 @@ export default function UseIsMobileTest() {
   return (
     <div>
       <div>isMobile</div>
-      <div>{String(isMobile)}</div>
+      <div>
+        {isMobile ? <span className="text-green-500">Mobile</span> : <span className="text-blue-50">Tablet</span>}
+      </div>
+      <div>window.innerWidth</div>
+      <div>{window.innerWidth}</div>
     </div>
   );
 }
