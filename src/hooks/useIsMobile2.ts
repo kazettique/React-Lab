@@ -6,8 +6,11 @@ function useIsMobile2(): boolean {
   const [isMobile, setIsMobile] = useState<boolean>(mediaQueryList.matches);
 
   useEffect(() => {
-    const onResize = () => setIsMobile(mediaQueryList.matches);
-    onResize();
+    const onResize = (event: MediaQueryListEvent) => {
+      alert('useIsMobile2!!');
+      setIsMobile(event.matches);
+    };
+    // onResize();
 
     if (mediaQueryList && mediaQueryList?.addEventListener) {
       mediaQueryList.addEventListener('change', onResize);
@@ -19,7 +22,7 @@ function useIsMobile2(): boolean {
     }
 
     return () => {
-      mediaQueryList.removeEventListener('resize', onResize);
+      mediaQueryList.removeEventListener('change', onResize);
     };
   }, []);
 

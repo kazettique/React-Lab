@@ -4,13 +4,7 @@ function useIsPortrait(): boolean {
   const [isPortrait, setIsPortrait] = useState<boolean>(false);
 
   const updateOrientation = useCallback((event: MediaQueryListEvent) => {
-    if (event.matches) {
-      // Portrait mode
-      setIsPortrait(true);
-    } else {
-      // Landscape
-      setIsPortrait(false);
-    }
+    setIsPortrait(event.matches);
   }, []);
 
   useEffect(() => {
