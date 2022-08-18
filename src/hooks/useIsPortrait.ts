@@ -14,7 +14,14 @@ function useIsPortrait(): boolean {
       setIsPortrait(true);
     }
 
-    portrait.addEventListener('change', updateOrientation);
+    if (portrait && portrait?.addEventListener) {
+      portrait.addEventListener('change', updateOrientation);
+    }
+
+    if (portrait && portrait?.addListener) {
+      portrait.addListener(updateOrientation);
+    }
+
     return () => portrait.removeEventListener('change', updateOrientation);
   }, [updateOrientation]);
 
